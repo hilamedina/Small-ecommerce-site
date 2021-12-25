@@ -4,30 +4,22 @@ import './Products.css';
 
 export default class products extends Component {
   state = {
-    counter: 0,
+    // counter: 0,
     arrayOfData: [],
   };
-  addCount = () => {
-    this.setState({ counter: this.state.counter + 1 });
-    console.log(this.state.counter);
-  };
+  // addCount = () => {
+  //   this.setState({ counter: this.state.counter + 1 });
+  //   // console.log(this.state.counter);
+  // };
 
   printData = () => {
     const dataMaps = Data.map((element) => {
       return (
-        <div className="Data-style" key={element.id}>
-          <div className="Data-style-card">
-            <img className="image-maps" src={element.image} alt="" />
-            <div>{element.price}</div>
-            <div>{element.title}</div>
-            <button
-              onClick={() => {
-                this.addCount();
-              }}
-            >
-              Add to cart
-            </button>
-          </div>
+        <div className="Data-style-card" key={element.id}>
+          <img className="image-maps" src={element.image} alt="" />
+          <div>{element.price}</div>
+          <div>{element.title}</div>
+          <button onClick={this.props.clickhandle}>Add to cart</button>
         </div>
       );
     });
@@ -35,6 +27,6 @@ export default class products extends Component {
   };
 
   render() {
-    return <div>{this.printData()}</div>;
+    return <div className="Data-style">{this.printData()}</div>;
   }
 }

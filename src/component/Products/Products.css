@@ -1,19 +1,23 @@
 .Data-style{
 display:flex;
-flex-direction:row;
-justify-content: space-around;
+flex-wrap: wrap;
+/* flex-direction:row; */
+justify-content: center;
+align-items: center;
+gap: 10px;
+
 }
 
 .Data-style-card{
 display:flex;
 flex-direction:column;
 height: 300px;
-width:300px;
+width:20%;
 }
 .image-maps{height: 100px;
 width:100px;
 }
-.Data-style{
+/* .Data-style{
     display:flex;
     flex-direction:row;
-}
+} */
