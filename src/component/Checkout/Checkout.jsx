@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './Checkout.css';
 
 export default class Checkout extends Component {
-  componentDidMount = () => {
-    console.log(this.props.choosenItem);
-  };
+  // componentDidMount = () => {
+  //   console.log(this.props.choosenItem);
+  // };
   showChoosenProduct = () => {
     const NewArray = this.props.choosenItem.map((element) => {
       return (
@@ -12,8 +12,8 @@ export default class Checkout extends Component {
           <img className="Image-in-cart-item" src={element.image} alt="" />
           <div>{element.price}</div>
           <div>{element.title}</div>
-          <div>Quantity</div>
-          <div>Delete</div>
+          <div> {this.props.quantityButton} quantity </div>
+          <button>Delete</button>
         </div>
       );
     });

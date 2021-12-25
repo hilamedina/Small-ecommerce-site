@@ -3,10 +3,6 @@ import Data from '../Data/Data';
 import './Products.css';
 
 export default class products extends Component {
-  state = {
-    // itemList: [],
-    // arrayOfData: [],
-  };
   printData = () => {
     const dataMaps = Data.map((element) => {
       return (

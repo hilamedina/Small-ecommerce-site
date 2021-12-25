@@ -8,6 +8,7 @@ import Checkout from '../Checkout/Checkout';
 
 export default class Home extends Component {
   state = {
+    quantity: 1,
     counter: 0,
     arrayOfItem: [],
   };
@@ -29,7 +30,10 @@ export default class Home extends Component {
               <Products clickhandle={this.addCount} />
             </Route>
             <Route exact path="/checkout">
-              <Checkout choosenItem={this.state.arrayOfItem} />
+              <Checkout
+                choosenItem={this.state.arrayOfItem}
+                quantityButton={this.state.quantity}
+              />
             </Route>
           </div>
         </BrowserRouter>
@@ -37,3 +41,10 @@ export default class Home extends Component {
     );
   }
 }
+//props
+
+//leftside - name of props
+//riht side - value of the props
+
+// if we are in the object where the state is  value ==> this.state.(what ever you want)
+// when i want to use my props ==> this.props.(name pf the props)
