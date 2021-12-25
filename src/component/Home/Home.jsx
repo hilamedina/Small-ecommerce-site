@@ -15,14 +15,9 @@ export default class Home extends Component {
   };
   addCount = (product) => {
     this.setState({ counter: this.state.counter + 1 });
-    this.setState(
-      (prevState) => ({
-        arrayOfItem: [...prevState.arrayOfItem, product],
-      }),
-      () => {
-        console.log(this.state.arrayOfItem);
-      }
-    );
+    this.setState((prevState) => ({
+      arrayOfItem: [...prevState.arrayOfItem, product],
+    }));
   };
 
   render() {
@@ -35,7 +30,9 @@ export default class Home extends Component {
             <Route exact path="/products">
               <Products clickhandle={this.addCount} />
             </Route>
-            <Route exact path="/checkout" exact component={Checkout} />
+            <Route exact path="/checkout">
+              <Checkout choosenItem={this.state.arrayOfItem} />
+            </Route>
           </div>
         </BrowserRouter>
       </div>

@@ -11,10 +11,13 @@ export default class products extends Component {
     const dataMaps = Data.map((element) => {
       return (
         <div className="Data-style-card" key={element.id}>
-          <img className="image-maps" src={element.image} alt="" />
+          <img className="Image-maps" src={element.image} alt="" />
           <div>{element.price}</div>
           <div>{element.title}</div>
-          <button onClick={() => this.props.clickhandle(element)}>
+          <button
+            className="Add-to-cart-button"
+            onClick={() => this.props.clickhandle(element)}
+          >
             Add to cart
           </button>
         </div>
@@ -22,12 +25,6 @@ export default class products extends Component {
     });
     return dataMaps;
   };
-
-  // addItemToCart = () => {
-  //   let cartItem =
-
-  // }
-
   render() {
     return <div className="Data-style">{this.printData()}</div>;
   }

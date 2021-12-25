@@ -1,23 +1,27 @@
 .Data-style{
 display:flex;
 flex-wrap: wrap;
-/* flex-direction:row; */
-justify-content: center;
+justify-content:center;
 align-items: center;
 gap: 10px;
-
 }
 
 .Data-style-card{
 display:flex;
 flex-direction:column;
-height: 300px;
-width:20%;
+background-color: cornsilk;
+height:350px;
+width:300px;
 }
-.image-maps{height: 100px;
-width:100px;
+.Image-maps{
+border:darkgreen solid 2px;
+padding:20px;
+margin: auto;
+height:150px;
+width:150px;
 }
-/* .Data-style{
-    display:flex;
-    flex-direction:row;
-} */
+.Add-to-cart-button{
+ width:100px;
+ padding:10px;
+ margin: 20px auto;
+}
