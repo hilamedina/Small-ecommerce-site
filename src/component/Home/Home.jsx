@@ -10,12 +10,21 @@ export default class Home extends Component {
   state = {
     quantity: 1,
     counter: 0,
-    arrayOfItem: [],
+    arrayOfItems: [],
   };
   addCount = (productElementFromMap) => {
     this.setState({ counter: this.state.counter + 1 });
     this.setState((prevState) => ({
-      arrayOfItem: [...prevState.arrayOfItem, productElementFromMap],
+      arrayOfItems: [...prevState.arrayOfItems, productElementFromMap],
+    }));
+  };
+
+  removeItem = (productElementFromMap) => {
+    this.setState({ counter: this.state.counter - 1 });
+    this.setState((prevState) => ({
+      arrayOfItems: prevState.arrayOfItems.filter(
+        (e) => e !== productElementFromMap
+      ),
     }));
   };
 
@@ -31,8 +40,9 @@ export default class Home extends Component {
             </Route>
             <Route exact path="/checkout">
               <Checkout
-                choosenItem={this.state.arrayOfItem}
+                choosenItem={this.state.arrayOfItems}
                 quantityButton={this.state.quantity}
+                deleteitemFromCart={this.removeItem}
               />
             </Route>
           </div>
