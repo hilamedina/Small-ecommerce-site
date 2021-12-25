@@ -1,0 +1,26 @@
+.Checkout{
+    height: 100vh;
+    background-color: green;
+}
+.Data-style-checkout{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+    gap: 10px;
+    }
+.Data-style-card-item{
+    background-color: green;
+    display:flex;
+    flex-direction:column;
+    background-color: cornsilk;
+    height:350px;
+    width:300px;
+    }
+    .Image-in-cart-item{
+        border:darkgreen solid 2px;
+        padding:20px;
+        margin: auto;
+        height:150px;
+        width:150px;
+        }

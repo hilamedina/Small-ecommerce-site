@@ -4,19 +4,17 @@ import HeaderNavbar from '../headerNavbar/HeaderNavbar';
 import Products from '../Products/Products';
 import Homepage from '../Homepage/Homepage';
 import './Home.css';
-// import ShopCounter from '../ShopCounter/ShopCounter';
 import Checkout from '../Checkout/Checkout';
-// import Checkout from '../Checkout/Checkout';
 
 export default class Home extends Component {
   state = {
     counter: 0,
     arrayOfItem: [],
   };
-  addCount = (product) => {
+  addCount = (productElementFromMap) => {
     this.setState({ counter: this.state.counter + 1 });
     this.setState((prevState) => ({
-      arrayOfItem: [...prevState.arrayOfItem, product],
+      arrayOfItem: [...prevState.arrayOfItem, productElementFromMap],
     }));
   };
 
