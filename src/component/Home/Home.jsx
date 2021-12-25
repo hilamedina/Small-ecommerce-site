@@ -34,7 +34,9 @@ export default class Home extends Component {
         <BrowserRouter>
           <HeaderNavbar counter={this.state.counter} />
           <div>
-            <Route exact path="/" exact component={Homepage}></Route>
+            <Route exact path="/">
+              <Homepage />
+            </Route>
             <Route exact path="/products">
               <Products clickhandle={this.addCount} />
             </Route>

@@ -12,7 +12,7 @@ export default class Checkout extends Component {
           <img className="Image-in-cart-item" src={element.image} alt="" />
           <div>{element.price}</div>
           <div>{element.title}</div>
-          {/* <div> {this.props.quantityButton} quantity </div> */}
+          <div> {this.props.quantityButton} quantity </div>
           <button onClick={() => this.props.deleteitemFromCart(element)}>
             Delete
           </button>
