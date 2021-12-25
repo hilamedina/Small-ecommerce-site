@@ -11,20 +11,27 @@ import Checkout from '../Checkout/Checkout';
 export default class Home extends Component {
   state = {
     counter: 0,
+    arrayOfItem: [],
   };
-  addCount = () => {
+  addCount = (product) => {
     this.setState({ counter: this.state.counter + 1 });
-    // console.log(this.state.counter);
+    this.setState(
+      (prevState) => ({
+        arrayOfItem: [...prevState.arrayOfItem, product],
+      }),
+      () => {
+        console.log(this.state.arrayOfItem);
+      }
+    );
   };
+
   render() {
     return (
       <div className="Home">
         <BrowserRouter>
           <HeaderNavbar counter={this.state.counter} />
           <div>
-            <Route exact path="/" exact component={Homepage}>
-              {' '}
-            </Route>
+            <Route exact path="/" exact component={Homepage}></Route>
             <Route exact path="/products">
               <Products clickhandle={this.addCount} />
             </Route>

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './HeaderNavbar.css';
 import { Link } from 'react-router-dom';
-import ShopCounter from '../ShopCounter/ShopCounter';
-// import Products from '../Products/Products';
 
 export default class HeaderNavbar extends Component {
   render() {
@@ -14,8 +12,10 @@ export default class HeaderNavbar extends Component {
         <Link className="Link" to="/">
           Homepage
         </Link>
-        {/* <button onClick={this.props.handleclick}>counter</button> */}
-        <ShopCounter counter={this.props.counter} />
+        <Link className="Link" to="/checkout">
+          <div>{this.props.counter} </div>
+          <div>{this.props.nameOfButton} 🛒</div>
+        </Link>
       </div>
     );
   }

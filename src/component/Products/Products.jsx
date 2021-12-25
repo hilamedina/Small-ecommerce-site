@@ -4,14 +4,9 @@ import './Products.css';
 
 export default class products extends Component {
   state = {
-    // counter: 0,
-    arrayOfData: [],
+    // itemList: [],
+    // arrayOfData: [],
   };
-  // addCount = () => {
-  //   this.setState({ counter: this.state.counter + 1 });
-  //   // console.log(this.state.counter);
-  // };
-
   printData = () => {
     const dataMaps = Data.map((element) => {
       return (
@@ -19,12 +14,19 @@ export default class products extends Component {
           <img className="image-maps" src={element.image} alt="" />
           <div>{element.price}</div>
           <div>{element.title}</div>
-          <button onClick={this.props.clickhandle}>Add to cart</button>
+          <button onClick={() => this.props.clickhandle(element)}>
+            Add to cart
+          </button>
         </div>
       );
     });
     return dataMaps;
   };
+
+  // addItemToCart = () => {
+  //   let cartItem =
+
+  // }
 
   render() {
     return <div className="Data-style">{this.printData()}</div>;
